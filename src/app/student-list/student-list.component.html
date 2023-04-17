@@ -1,0 +1,14 @@
+<h2>Popis Studenata</h2>
+<ul>
+    <li *ngFor="let student of students"
+    
+    [class.selected]="student === selectedStudent"
+    class="studentSelector"
+    >
+        <span class="jmbag" (click)="onSelect(student)">{{student.jmbag}}</span> {{student.ects}} ECTS <button (click)="delete(student)" class="deleteBtn">Delete</button>
+    </li>
+</ul>
+
+<!-- <app-student-details [student]="selectedStudent"></app-student-details> -->
+
+<app-create-student></app-create-student>

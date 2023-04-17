@@ -1,0 +1,30 @@
+li{
+    list-style-type: none;
+    border-radius: 10px;
+}
+.jmbag{
+    padding: 10px;
+    font-size: 16px;
+    background-color: aqua;
+    color: black;
+    border-radius: 10px;
+}
+
+.studentSelector{
+    display: block;
+    padding: 10px;
+}
+.studentSelector:hover{
+    cursor: pointer;
+}
+.deleteBtn{
+    display: inline-block;
+    background-color: red;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.deleteBtn:hover{
+    background-color: rgb(75, 7, 7);
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<div>
+    <h2>Dodaj studenta</h2>
+    <div class="wrapper">
+        <div>
+            <label for="">Ime:</label>
+            <div>
+                <input class="input" #studentName>
+            </div>
+        </div>
+        <div>
+            <label for="">Prezime:</label>
+            <div>
+                <input class="input" #studentLastname>
+            </div>
+        </div>
+        <div>
+            <label for="">Jmbag:</label>
+            <div>
+                <input class="input" #studentJmbag>
+            </div>
+        </div>
+        <div>
+            <label for="">Ects:</label>
+            <div>
+                <input class="input" #studentEcts>
+            </div>
+        </div>
+        <button class="addBtn"
+        (click)="add(studentName.value, studentLastname.value, studentJmbag.value, +studentEcts.value);"
+        >Dodaj</button>
+    </div>
+</div>

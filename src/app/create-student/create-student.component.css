@@ -1,0 +1,22 @@
+.input{
+    height: 20px;
+    padding: 5px;
+    background-color: silver;
+    color: black;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.input:focus{
+    background-color: white;
+}
+.addBtn{
+    display: inline-block;
+    background-color: green;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.wrapper{
+    padding: 0px 0px 10px 20px;
+}
