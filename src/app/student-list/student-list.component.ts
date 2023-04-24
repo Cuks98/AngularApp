@@ -12,7 +12,8 @@ export class StudentListComponent implements OnInit{
   
   students: Student[] = [];
   selectedStudent!: Student;
-  
+  tempList: Student[] = [];
+  studentsLab: Student[] = [];
   /**
    *
    */
@@ -40,4 +41,41 @@ export class StudentListComponent implements OnInit{
     console.log(response);
     
   }
+
+  sortAsc(): void{
+    console.log("sort asc clicked");
+    this.students.sort((a, b) => a.ects > b.ects ? -1 : 1 )
+  }
+  sortDesc(): void{
+    console.log("sort desc clicked");
+    this.students.sort((a, b) => a.ects > b.ects ? 1 : -1 )
+  }
+  filter(str:string):void{
+    console.log("filter")
+    if(str==""){
+     this.getStudents()
+     return
+    }
+    this.students.forEach(element => {
+      if(element.jmbag.includes(str)){
+        this.tempList.push(element)
+      }
+    });
+    this.students = []
+    this.students = this.tempList
+    this.tempList = []
+  }
+
+  getStudentsByGender(request:string):void{
+    this.studentService.getByGender(request).subscribe(students => this.studentsLab = students);
+  }
+
+  getStudentsByCity(request:string):void{
+    this.studentService.getByCity(request).subscribe(students => this.studentsLab = students);
+  }
+
+  refresh():void{
+    this.ngOnInit()
+  }
+  
 }

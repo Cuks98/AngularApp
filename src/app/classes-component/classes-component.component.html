@@ -1,0 +1,14 @@
+<p>classes-component works!</p>
+
+<ul>
+    <li *ngFor="let class of classes"
+
+    [class.selected]="class === selectedClass"
+    class="studentSelector"
+    >
+        <span class="jmbag" (click)="onSelect(class)">{{class.id}}</span> {{class.name}}
+    </li>
+</ul>
+
+<p>{{student.jmbag}}</p>
+

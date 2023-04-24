@@ -8,6 +8,7 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { StartComponent } from './start/start.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import { ClassesComponentComponent } from './classes-component/classes-component.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CreateStudentComponent } from './create-student/create-student.componen
     StudentListComponent,
     StudentDetailsComponent,
     StartComponent,
-    CreateStudentComponent
+    CreateStudentComponent,
+    ClassesComponentComponent
   ],
   imports: [
     BrowserModule,

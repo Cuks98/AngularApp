@@ -4,6 +4,7 @@ import { Student } from './student';
 import { STUDENTS } from './mock-students';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AddNewStudentRequest } from './addNewStudentRequest';
+import { UpdateStudentRequest } from './updateStudentRequest';
 @Injectable({
   providedIn: 'root'
 })
@@ -65,6 +66,31 @@ export class StudentService {
         catchError(this.handleError<Student>('getStudent'))
       )
   }
+
+  updateStudent(request: UpdateStudentRequest): Observable<Student> {
+    return this.http.post<Student>(`${this.baseUrl}/update-student`, request)
+      .pipe(
+        tap(_ => console.log("updating student")),
+        catchError(this.handleError<Student>('getStudent'))
+      )
+  }
+
+  getByGender(request: string): Observable<Student[]>{
+    return this.http.get<Student[]>(`${this.baseUrl}/get-by-gender/${request}`)
+      .pipe(
+        tap(_ => console.log("fatching students")),
+        catchError(this.handleError<Student[]>('getStudents', []))
+      )
+  }
+
+  getByCity(request: string): Observable<Student[]>{
+    return this.http.get<Student[]>(`${this.baseUrl}/get-by-city/${request}`)
+      .pipe(
+        tap(_ => console.log("fatching students")),
+        catchError(this.handleError<Student[]>('getStudents', []))
+      )
+  }
+
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

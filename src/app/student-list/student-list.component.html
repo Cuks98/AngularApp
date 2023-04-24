@@ -1,4 +1,16 @@
 <h2>Popis Studenata</h2>
+
+<input #filterInput>
+<button (click)="filter(filterInput.value)">Filter</button>
+
+<button (click) = "sortAsc()">Sortiraj uzlazno</button>
+<button (click) = "sortDesc()">Sortiraj silazno</button>
+<br>
+<br>
+<input #gender>
+<button (click)="getStudentsByGender(gender.value)">Get by gender</button><br><br>
+<input #city>
+<button (click)="getStudentsByCity(city.value)">Get by city</button><br><br>
 <ul>
     <li *ngFor="let student of students"
     
@@ -8,6 +20,16 @@
         <span class="jmbag" (click)="onSelect(student)">{{student.jmbag}}</span> {{student.ects}} ECTS <button (click)="delete(student)" class="deleteBtn">Delete</button>
     </li>
 </ul>
+
+<div *ngIf="studentsLab">
+    <ul>
+        <li *ngFor="let x of studentsLab"
+        class="studentSelector"
+        >
+            <span class="jmbag" (click)="onSelect(x)">{{x.jmbag}}</span> {{x.city}}
+        </li>
+    </ul>
+</div>
 
 <!-- <app-student-details [student]="selectedStudent"></app-student-details> -->
 

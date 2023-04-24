@@ -4,4 +4,36 @@
     <h3>Broj ECTS bodova: {{student.ects}}</h3>
     <h3 *ngIf="student.shouldStudentPayFee; else notPay">Student treba plačati školarinu</h3>
     <ng-template #notPay><h3>Student ne treba plačati školarinu</h3></ng-template>
+    <h3>{{student.gender}}</h3>
+    <h3>{{student.address}}</h3>
+    <h3>{{student.city}}</h3>
+</div>
+<div *ngIf="labStudent" class="student-details">
+    <h2>lab student</h2>
+    <h2>{{labStudent.jmbag}} - detalji studenta</h2>
+    <h2>Ime: {{labStudent.firstName}}</h2>
+    <h2>Prezime: {{labStudent.lastName}}</h2>
+    <h2>Broj godina: {{labStudent.age}}</h2>
+    <h3>Broj ECTS bodova: {{labStudent.ects}}</h3>
+    <h2>JMBAG: {{labStudent.jmbag}}</h2>
+    <h3 *ngIf="labStudent.shouldStudentPayFee; else notPay2">Student treba plačati školarinu</h3>
+    <ng-template #notPay2><h3>Student ne treba plačati školarinu</h3></ng-template>
+</div>
+
+<div *ngIf="student">
+    <h2>jmbag</h2>
+    <input value="{{student.jmbag}}" disabled #jmbag>
+    <h2>Ime</h2>
+    <input #newName>
+    <h2>prezime</h2>
+    <input #newLastName>
+    <h2>ects</h2>
+    <input value="{{student.ects}}" #newEcts>
+    <br>
+    <br>
+    <button class="addBtn"
+        (click)="updateStudent(newName.value, newLastName.value, +newEcts.value, jmbag.value);"
+        >Dodaj</button>
+
+    <a href="/classes/{{student.jmbag}}">classes</a>
 </div>
