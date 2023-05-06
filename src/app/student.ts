@@ -1,3 +1,5 @@
+import { Course } from "./course";
+
 export interface Student {
     jmbag: string,
     ects: number,
@@ -5,5 +7,6 @@ export interface Student {
     classes: number[],
     gender: string,
     address: string,
-    city: string
+    city: string,
+    courses: Course[]
 }

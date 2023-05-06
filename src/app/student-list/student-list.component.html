@@ -26,7 +26,7 @@
         <li *ngFor="let x of studentsLab"
         class="studentSelector"
         >
-            <span class="jmbag" (click)="onSelect(x)">{{x.jmbag}}</span> {{x.city}}
+            <span class="jmbag" routerLink="/details/{{x.jmbag}}">{{x.jmbag}}</span> {{x.city}}
         </li>
     </ul>
 </div>

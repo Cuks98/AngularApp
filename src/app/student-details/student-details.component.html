@@ -7,6 +7,14 @@
     <h3>{{student.gender}}</h3>
     <h3>{{student.address}}</h3>
     <h3>{{student.city}}</h3>
+    <div *ngIf="courses">
+        <h2>Kolegiji na kojima je student upisan</h2>
+        <ul>
+            <li *ngFor="let x of courses">
+                <span>{{x.name}}</span>
+            </li>
+        </ul>
+    </div>
 </div>
 <div *ngIf="labStudent" class="student-details">
     <h2>lab student</h2>
